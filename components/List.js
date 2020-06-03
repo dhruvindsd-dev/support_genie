@@ -7,6 +7,9 @@ const List = () => {
   // react hook
   const [list2State, setList2State] = useState([]);
   //  delete btn handle
+  const callBack = () => {
+  console.log(list2)
+  }
   const handleDel = () => {
     setList2State(
       list2.reduce((total, item) => {
@@ -17,6 +20,7 @@ const List = () => {
         return total;
       }, [])
     );
+    callBack()
   };
   //  add btn handle
   const handleAdd = () => {
@@ -31,6 +35,7 @@ const List = () => {
         }, [])
       )
     );
+    callBack()
   };
 
   return (
