@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 const List = () => {
   const listItems = ["item1", "item2", "item3", "item4", "item5"];
@@ -7,9 +7,9 @@ const List = () => {
   // react hook
   const [list2State, setList2State] = useState([]);
   //  delete btn handle
-  const callBack = () => {
-  console.log(list2)
-  }
+  useEffect(() => {
+    console.log(list2);
+  });
   const handleDel = () => {
     setList2State(
       list2.reduce((total, item) => {
@@ -20,7 +20,6 @@ const List = () => {
         return total;
       }, [])
     );
-    callBack()
   };
   //  add btn handle
   const handleAdd = () => {
@@ -35,7 +34,6 @@ const List = () => {
         }, [])
       )
     );
-    callBack()
   };
 
   return (
